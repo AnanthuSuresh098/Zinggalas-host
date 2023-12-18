@@ -12,7 +12,6 @@ const festivalController = require("./controllers/festivalController");
 const uploadController = require("./controllers/uploadController");
 
 const app = express();
-app.use(cors());
 
 app.use(express.json());
 
@@ -21,17 +20,11 @@ const _dirname = path.dirname("");
 const buildPath = path.join(_dirname, "../client/build");
 
 app.use(express.static(buildPath));
-
-app.get("/*", function (req, res) {
-  res.sendFile(
-    path.join(__dirname, "../client/build/index.html"),
-    function (err) {
-      if (err) {
-        res.status(500).send(err);
-      }
-    }
-  );
-});
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 app.use("/celebration", celebrationController);
 app.use("/festival", festivalController);
