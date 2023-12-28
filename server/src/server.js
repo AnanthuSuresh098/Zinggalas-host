@@ -6,7 +6,7 @@ dotenv.config();
 
 const PORT=process.env.PORT||4000;
 
-app.listen(PORT, async () => {
+app.listen(8000, async () => {
   try {
     await connect();
     console.log(`listening on port ${PORT}`);
