@@ -26,6 +26,17 @@ app.use(
   })
 );
 
+app.get("/*", function (req, res) {
+  res.sendFile(
+    path.join(__dirname, "../client/build/index.html"),
+    function (err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    }
+  );
+});
+
 app.use("/celebration", celebrationController);
 app.use("/festival", festivalController);
 app.use("/auth", authController);
