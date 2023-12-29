@@ -9,7 +9,7 @@ export const Celebrations = () => {
   const [celebrationdata, setCelebrationData] = useState([]);
 
   useEffect(() => {
-    axios(`http://localhost:5000/celebration`)
+    axios(`http://52.66.253.4/celebration`)
       .then((res) => setCelebrationData(res.data))
       .catch((err) => console.log(err));
   }, []);

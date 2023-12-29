@@ -37,7 +37,7 @@ export const getUserData =(phone) =>(dispatch) => {
     dispatch(getUserReq());
     console.log(phone)
      axios
-       .get(`http://localhost:5000/auth/login/${"+91" + phone}`)
+       .get(`http://52.66.253.4/auth/login/${"+91" + phone}`)
        .then((res) => dispatch(getUserSuccess(res.data)))
        .catch(() => dispatch(getUserFailure()));
 };
