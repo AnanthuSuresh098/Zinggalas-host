@@ -17,7 +17,7 @@ app.use(express.json());
 
    //aws server config
 const _dirname = path.dirname("");
-const buildPath = path.join(_dirname, "../client/build");
+const buildPath = path.join(_dirname, ".../client/build");
 
 app.use(express.static(buildPath));
 app.use(
@@ -30,7 +30,7 @@ app.use(
 
 app.get("/", function (req, res) {
   res.sendFile(
-    path.join(__dirname, "../client/build/index.html"),
+    path.join(__dirname, ".../client/build/index.html"),
     function (err) {
       if (err) {
         res.status(500).send(err);
