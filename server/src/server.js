@@ -1,8 +1,9 @@
 const app = require("./index");
 const connect = require("./configs/db");
+var http=require("http");
 // const dotenv =require("dotenv");
 
-dotenv.config();
+// dotenv.config();
 
 // const PORT=process.env.PORT||4000;
 
