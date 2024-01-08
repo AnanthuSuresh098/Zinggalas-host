@@ -1,6 +1,6 @@
 const express = require("express");
-const cors = require("cors");
-const path = require("path");
+// const cors = require("cors");
+// const path = require("path");
 
 const celebrationController = require("./controllers/celebrationController");
 const authController = require("./controllers/authController");
@@ -16,7 +16,7 @@ const app = express();
 app.use(express.json());
 
 //    //aws server config
-const _dirname = path.dirname("");
+// const _dirname = path.dirname("");
 // const buildPath = path.join(_dirname, "../client/build");
 
 // app.use(express.static(buildPath));
@@ -25,15 +25,6 @@ const _dirname = path.dirname("");
 //     origin: "*",
 //   })
 // );
-
-
-app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"), function (err) {
-    if (err) {
-      res.status(500).send(err);
-    }
-  });
-});
 
 
 // app.get("/", function (req, res) {
