@@ -1,5 +1,5 @@
 const express = require("express");
-// const cors = require("cors");
+const cors = require("cors");
 // const path = require("path");
 
 const celebrationController = require("./controllers/celebrationController");
@@ -20,11 +20,11 @@ app.use(express.json());
 // const buildPath = path.join(_dirname, "../client/build");
 
 // app.use(express.static(buildPath));
-// app.use(
-//   cors({
-//     origin: "*",
-//   })
-// );
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 
 // app.get("/", function (req, res) {
